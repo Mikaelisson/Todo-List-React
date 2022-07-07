@@ -1,3 +1,7 @@
 .done{
     text-decoration: line-through;
 }
+
+.modal{
+    background-color: rgb(0, 0, 0, 0.2);
+}
