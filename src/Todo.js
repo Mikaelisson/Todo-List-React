@@ -7,9 +7,9 @@ import Modal from "./components/Modal";
 
 const SAVED_ITEMS = "savedItems";
 
-function Todo(props) {
+function Todo() {
   const [showModal, setShowModal] = useState(false);
-  const [items, setItems] = useState(props.items);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     let savedItems = JSON.parse(localStorage.getItem(SAVED_ITEMS));

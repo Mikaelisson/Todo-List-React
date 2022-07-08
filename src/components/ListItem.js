@@ -20,7 +20,7 @@ function ListItem(props) {
         }
       >
         {props.item.text}
-        <div>
+        <div className="d-flex justify-content-center align-items-center">
           <button
             className="btn me-2"
             onClick={() => {
