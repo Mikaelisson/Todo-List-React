@@ -9,10 +9,10 @@ function List(props) {
         <div className="w-75">{user}</div>
         <div className="w-25 d-flex justify-content-end align-items-center gap-2">
           <button className="btn btn-outline-secondary">
-            <IconEdit className="w-25" />
+            <IconEdit className="icon" />
           </button>
           <button className="btn btn-outline-danger">
-            <IconDelete className="w-25" />
+            <IconDelete className="icon" />
           </button>
         </div>
       </div>
