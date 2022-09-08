@@ -15,3 +15,7 @@ code {
 .icon{
   width: 18px;
 }
+
+ul{
+  list-style: none;
+}

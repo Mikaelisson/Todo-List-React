@@ -35,6 +35,13 @@ function TodoForm() {
     }
   };
 
+  //editar item
+  const onEditItem = (index, item) => {
+    item.text = "EDITADO";
+    items[index] = item;
+    setItems([...items]);
+  };
+
   //deletar item
   const onDeleteItem = (item) => {
     let filteredItems = items.filter((it) => it.id !== item.id);
@@ -65,7 +72,11 @@ function TodoForm() {
       </div>
 
       <div>
-        <List items={items} onDeleteItem={onDeleteItem} />
+        <List
+          items={items}
+          onDeleteItem={onDeleteItem}
+          onEditItem={onEditItem}
+        />
       </div>
     </form>
   );
