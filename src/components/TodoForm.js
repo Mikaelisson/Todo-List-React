@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import List from "./List";
+import Item from "./Item";
 import All from "./All";
 import Active from "./Active";
 import Done from "./Done";
@@ -7,28 +8,37 @@ import AddTask from "./AddTask";
 
 function TodoForm() {
   const [text, setText] = useState("");
-  const [users, setUsers] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    let savedItems = JSON.parse(localStorage.getItem("users"));
-    if (savedItems) setUsers(savedItems);
+    let savedItems = JSON.parse(localStorage.getItem("items"));
+    if (savedItems) setItems(savedItems);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("users", JSON.stringify(users));
-  }, [users]);
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
+  //valor do input
+  const handleChange = (e) => {
+    let t = e.target.value;
+    setText(t);
+  };
+
+  //adicionar novo item
   const addItem = (e) => {
     e.preventDefault();
     if (text) {
-      setUsers([...users, text]);
+      let item = new Item(text);
+      setItems([...items, item]);
       setText("");
     }
   };
 
-  const handleChange = (e) => {
-    let t = e.target.value;
-    setText(t);
+  //deletar item
+  const onDeleteItem = (item) => {
+    let filteredItems = items.filter((it) => it.id !== item.id);
+    setItems(filteredItems);
   };
 
   return (
@@ -40,7 +50,6 @@ function TodoForm() {
             className="form-control"
             placeholder="type to search"
             aria-describedby="basic-addon1"
-            id="userInput"
             onChange={handleChange}
             value={text}
           ></input>
@@ -56,7 +65,7 @@ function TodoForm() {
       </div>
 
       <div>
-        <List users={users} />
+        <List items={items} onDeleteItem={onDeleteItem} />
       </div>
     </form>
   );
