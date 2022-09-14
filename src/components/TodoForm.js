@@ -35,17 +35,21 @@ function TodoForm() {
     }
   };
 
-  //editar item
-  const onEditItem = (index, item) => {
-    item.text = "EDITADO";
-    items[index] = item;
-    setItems([...items]);
-  };
-
   //deletar item
   const onDeleteItem = (item) => {
     let filteredItems = items.filter((it) => it.id !== item.id);
     setItems(filteredItems);
+  };
+
+  //marcar item feito
+  const onDoneItem = (item) => {
+    const updatedItems = items.map((it) => {
+      if (it.id === item.id) {
+        it.done = !it.done;
+      }
+      return it;
+    });
+    setItems(updatedItems);
   };
 
   return (
@@ -75,7 +79,7 @@ function TodoForm() {
         <List
           items={items}
           onDeleteItem={onDeleteItem}
-          onEditItem={onEditItem}
+          onDoneItem={onDoneItem}
         />
       </div>
     </form>
