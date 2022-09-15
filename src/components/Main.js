@@ -3,9 +3,9 @@ import TodoForm from "./TodoForm";
 
 function Main() {
   return (
-    <div>
+    <main>
       <TodoForm />
-    </div>
+    </main>
   );
 }
 

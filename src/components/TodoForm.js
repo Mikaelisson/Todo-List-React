@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import List from "./List";
 import Item from "./Item";
-import All from "./All";
-import Active from "./Active";
-import Done from "./Done";
-import AddTask from "./AddTask";
 
 function TodoForm() {
   const [text, setText] = useState("");
@@ -66,13 +62,15 @@ function TodoForm() {
           ></input>
         </div>
 
-        <AddTask onAddItem={addItem} />
-      </div>
-
-      <div className="d-flex justify-content-end gap-2 my-2">
-        <All />
-        <Active />
-        <Done />
+        <button
+          onClick={(event) => {
+            addItem(event);
+          }}
+          id="addItem"
+          className="btn btn-outline-primary w-25"
+        >
+          Add Task
+        </button>
       </div>
 
       <div>

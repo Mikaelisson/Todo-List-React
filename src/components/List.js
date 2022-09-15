@@ -1,10 +1,10 @@
 import React from "react";
-import DeleteItem from "./DeleteItem";
-import DoneItem from "./DoneItem";
+import IconDone from "./assets/IconDone";
+import IconDelete from "./assets/IconDelete";
 
 function List(props) {
   return (
-    <ul className="p-0">
+    <ul className="p-0 mt-4">
       {props.items
         .map((item, index) => {
           return (
@@ -12,14 +12,31 @@ function List(props) {
               key={index}
               className={
                 item.done
-                  ? "w-100 card p-3 mb-3 d-flex flex-row text-decoration-line-through opacity-75"
+                  ? "w-100 card p-3 mb-3 d-flex flex-row text-decoration-line-through opacity-50"
                   : "w-100 card p-3 mb-3 d-flex flex-row"
               }
             >
               <div className="w-75 fw-bold fs-4">{item.text}</div>
               <div className="w-25 d-flex justify-content-end align-items-center gap-2">
-                <DoneItem item={item} onDoneItem={props.onDoneItem} />
-                <DeleteItem onDeleteItem={props.onDeleteItem} item={item} />
+                <button
+                  onClick={(event) => {
+                    event.preventDefault();
+                    props.onDoneItem(item);
+                  }}
+                  className="btn btn-outline-success"
+                >
+                  <IconDone className="icon" />
+                </button>
+
+                <button
+                  onClick={(event) => {
+                    event.preventDefault();
+                    props.onDeleteItem(item);
+                  }}
+                  className="btn btn-outline-danger"
+                >
+                  <IconDelete className="icon" />
+                </button>
               </div>
             </li>
           );
