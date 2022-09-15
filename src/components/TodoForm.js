@@ -55,7 +55,7 @@ function TodoForm() {
           <input
             type="text"
             className="form-control"
-            placeholder="type to search"
+            placeholder="type to add"
             aria-describedby="basic-addon1"
             onChange={handleChange}
             value={text}

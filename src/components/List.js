@@ -23,7 +23,7 @@ function List(props) {
                     event.preventDefault();
                     props.onDoneItem(item);
                   }}
-                  className="btn btn-outline-success"
+                  className={item.done ? "btn btn-success" : "btn btn-outline-success"}
                 >
                   <IconDone className="icon" />
                 </button>
@@ -33,7 +33,7 @@ function List(props) {
                     event.preventDefault();
                     props.onDeleteItem(item);
                   }}
-                  className="btn btn-outline-danger"
+                  className={item.done ? "btn btn-danger" : "btn btn-outline-danger"}
                 >
                   <IconDelete className="icon" />
                 </button>
