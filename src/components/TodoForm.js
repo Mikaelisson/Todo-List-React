@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import List from "./List";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../actions/listAction";
 
+// const SAVED_ITEMS = "savedItems";
+
+
 function TodoForm() {
   const [text, setText] = useState("");
-  const [items, setItems] = useState([]);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    let savedItems = JSON.parse(localStorage.getItem("items"));
-    if (savedItems) setItems(savedItems);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("items", JSON.stringify(items));
-  }, [items]);
 
   //valor do input
   const handleChange = (e) => {
