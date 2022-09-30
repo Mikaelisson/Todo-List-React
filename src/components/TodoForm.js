@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import List from "./List";
-import Item from "./Item";
+
+import { useDispatch } from "react-redux";
+import { addItem } from "../actions/listAction";
 
 function TodoForm() {
   const [text, setText] = useState("");
   const [items, setItems] = useState([]);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let savedItems = JSON.parse(localStorage.getItem("items"));
@@ -22,30 +26,12 @@ function TodoForm() {
   };
 
   //adicionar novo item
-  const addItem = (e) => {
+  const addItemEvent = (e) => {
     e.preventDefault();
     if (text) {
-      let item = new Item(text);
-      setItems([...items, item]);
+      dispatch(addItem(text));
       setText("");
     }
-  };
-
-  //deletar item
-  const onDeleteItem = (item) => {
-    let filteredItems = items.filter((it) => it.id !== item.id);
-    setItems(filteredItems);
-  };
-
-  //marcar item feito
-  const onDoneItem = (item) => {
-    const updatedItems = items.map((it) => {
-      if (it.id === item.id) {
-        it.done = !it.done;
-      }
-      return it;
-    });
-    setItems(updatedItems);
   };
 
   return (
@@ -64,7 +50,7 @@ function TodoForm() {
 
         <button
           onClick={(event) => {
-            addItem(event);
+            addItemEvent(event);
           }}
           id="addItem"
           className="btn btn-outline-primary w-25"
@@ -74,11 +60,7 @@ function TodoForm() {
       </div>
 
       <div>
-        <List
-          items={items}
-          onDeleteItem={onDeleteItem}
-          onDoneItem={onDoneItem}
-        />
+        <List />
       </div>
     </form>
   );

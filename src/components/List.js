@@ -1,11 +1,16 @@
 import React from "react";
 import IconDone from "./assets/IconDone";
 import IconDelete from "./assets/IconDelete";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteItem, changeDone } from "../actions/listAction";
 
-function List(props) {
+function List() {
+  const items = useSelector((state) => state.todo.value);
+  const dispatch = useDispatch();
+
   return (
     <ul className="p-0 mt-4">
-      {props.items
+      {items
         .map((item, index) => {
           return (
             <li
@@ -21,9 +26,11 @@ function List(props) {
                 <button
                   onClick={(event) => {
                     event.preventDefault();
-                    props.onDoneItem(item);
+                    dispatch(changeDone(item.id));
                   }}
-                  className={item.done ? "btn btn-success" : "btn btn-outline-success"}
+                  className={
+                    item.done ? "btn btn-success" : "btn btn-outline-success"
+                  }
                 >
                   <IconDone className="icon" />
                 </button>
@@ -31,9 +38,11 @@ function List(props) {
                 <button
                   onClick={(event) => {
                     event.preventDefault();
-                    props.onDeleteItem(item);
+                    dispatch(deleteItem(item.id));
                   }}
-                  className={item.done ? "btn btn-danger" : "btn btn-outline-danger"}
+                  className={
+                    item.done ? "btn btn-danger" : "btn btn-outline-danger"
+                  }
                 >
                   <IconDelete className="icon" />
                 </button>
