@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+<h1 align="center" name="readme-top"> Lista de Tarefas </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<p> <img src="https://img.shields.io/github/license/Mikaelisson/sistema-de-gerenciamento-de-usuarios"/> </p>
 
-In the project directory, you can run:
+<details>
+  <summary>Índice</summary>
+  <ol>
+    <li><a href="#descrição-do-projeto">Descrição do Projeto</a></li>
+    <li><a href="#acesso-ao-projeto">Acesso ao Projeto</a></li>
+    <li><a href="#tecnologias-utilizadas">Tecnologias utilizadas</a></li>
+    <li><a href="#pessoas-desenvolvedoras">Pessoas Desenvolvedoras do Projeto</a></li>
+    <li><a href="#licença">Licença</a></li>
+  </ol>
+</details>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# <p name="descrição-do-projeto"> Descrição do Projeto </p>
+<p> Lista de tarefas online para organizar melhor as tarefas do seu dia. </p>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# <p name="acesso-ao-projeto"> :file_folder: Acesso ao Projeto </p>
+Você pode acessar o projeto clicando [aqui.](https://mikaelisson.github.io/Todo-List-React/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+# <p name="tecnologias-utilizadas"> :heavy_check_mark: Tecnologias Utilizadas </p>
+* `HTML`
+* `Bootstrap`
+* `Javascript`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# <p name="pessoas-desenvolvedoras"> Autor </p>
+[<img src="https://avatars.githubusercontent.com/Mikaelisson" width="115px"><br><sub>Mikaelisson Gesuino</sub>](https://github.com/Mikaelisson)
+| :---: |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+<p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# <p name="licença"> Licença </p>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The [MIT License]() (MIT)
