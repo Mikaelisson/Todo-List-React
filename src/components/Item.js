@@ -1,8 +1,6 @@
 class Item {
-  static lastId = 0;
-
   constructor(text) {
-    this.id = Item.lastId++;
+    this.id = Math.random().toString(32).substring(2, 9);
     this.text = text;
     this.done = false;
   }

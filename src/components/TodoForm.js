@@ -4,9 +4,6 @@ import List from "./List";
 import { useDispatch } from "react-redux";
 import { addItem } from "../actions/listAction";
 
-// const SAVED_ITEMS = "savedItems";
-
-
 function TodoForm() {
   const [text, setText] = useState("");
 
@@ -19,8 +16,7 @@ function TodoForm() {
   };
 
   //adicionar novo item
-  const addItemEvent = (e) => {
-    e.preventDefault();
+  const addItemEvent = () => {
     if (text) {
       dispatch(addItem(text));
       setText("");
@@ -34,7 +30,7 @@ function TodoForm() {
           <input
             type="text"
             className="form-control"
-            placeholder="type to add"
+            placeholder="Type to add"
             aria-describedby="basic-addon1"
             onChange={handleChange}
             value={text}
@@ -43,7 +39,8 @@ function TodoForm() {
 
         <button
           onClick={(event) => {
-            addItemEvent(event);
+            event.preventDefault();
+            addItemEvent();
           }}
           id="addItem"
           className="btn btn-outline-primary w-25"
